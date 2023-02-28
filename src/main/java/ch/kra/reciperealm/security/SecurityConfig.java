@@ -19,7 +19,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests()
                 .requestMatchers("/h2/**").permitAll()
                 .requestMatchers(Routes.RECIPE).permitAll()
-                .anyRequest().authenticated()
+                .anyRequest().permitAll()
+//                .anyRequest().authenticated()
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS); // So a session token is not created after a login and all requests need a credential
         return http.build();

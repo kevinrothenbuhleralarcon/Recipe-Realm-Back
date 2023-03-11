@@ -12,7 +12,7 @@ import java.util.List;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping(Routes.RECIPE)
+@RequestMapping("/recipe")
 public class RecipeController {
 
     private final RecipeService recipeService;

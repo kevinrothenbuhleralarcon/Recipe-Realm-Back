@@ -6,6 +6,10 @@ import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
 
+import java.util.List;
+
+import static ch.kra.reciperealm.Strings.CANNOT_BE_EMPTY;
+
 @Getter
 @Setter
 @Entity
@@ -16,6 +20,9 @@ public class Recipe {
     private long id;
 
     @NonNull
-    @NotBlank(message = "Name cannot be empty")
+    @NotBlank(message = CANNOT_BE_EMPTY)
     private String name;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Ingredient> ingredients;
 }

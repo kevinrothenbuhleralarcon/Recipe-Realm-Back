@@ -1,6 +1,5 @@
 package ch.kra.reciperealm.security;
 
-import ch.kra.reciperealm.api.Routes;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -18,7 +17,6 @@ public class SecurityConfig {
                 .csrf().disable()
                 .authorizeHttpRequests()
                 .requestMatchers("/h2/**").permitAll()
-                .requestMatchers(Routes.RECIPE).permitAll()
                 .anyRequest().permitAll()
 //                .anyRequest().authenticated()
                 .and()

@@ -22,4 +22,9 @@ public class IngredientServiceImpl implements IngredientService{
     public List<Ingredient> addIngredients(List<Ingredient> ingredients) {
         return (List<Ingredient>)ingredientRepository.saveAll(ingredients);
     }
+
+    @Override
+    public List<Ingredient> getIngredientsByRecipeId(Long recipeId) {
+        return ingredientRepository.findAllByRecipeId(recipeId);
+    }
 }

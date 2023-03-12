@@ -1,5 +1,6 @@
 package ch.kra.reciperealm.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -32,8 +33,8 @@ public class Ingredient {
     private String uom;
 
 
-//    @ManyToOne(optional = false)
-//    @JoinColumn(name = "recipe_id")
-//    @JsonIgnore
-//    private Recipe recipe;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "recipe_id", referencedColumnName = "id")
+    @JsonIgnore
+    private Recipe recipe;
 }

@@ -1,5 +1,6 @@
 package ch.kra.reciperealm.api;
 
+import ch.kra.reciperealm.dto.FullRecipeDto;
 import ch.kra.reciperealm.model.Recipe;
 import ch.kra.reciperealm.service.RecipeService;
 import jakarta.validation.Valid;
@@ -23,12 +24,12 @@ public class RecipeController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Recipe> getRecipe(@PathVariable final Long id) {
+    public ResponseEntity<FullRecipeDto> getRecipe(@PathVariable final Long id) {
         return new ResponseEntity<>(recipeService.getRecipe(id), HttpStatus.OK);
     }
 
     @PostMapping()
-    public ResponseEntity<Recipe> addRecipe(@RequestBody @Valid final Recipe recipe) {
+    public ResponseEntity<FullRecipeDto> addRecipe(@RequestBody @Valid final FullRecipeDto recipe) {
         return new ResponseEntity<>(recipeService.addRecipe(recipe), HttpStatus.CREATED);
     }
 }

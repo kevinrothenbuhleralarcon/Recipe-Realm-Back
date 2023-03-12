@@ -35,6 +35,6 @@ public class Ingredient {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "recipe_id", referencedColumnName = "id")
-    @JsonIgnore
+    @JsonBackReference("recipe_ingredients")
     private Recipe recipe;
 }

@@ -7,4 +7,5 @@ import java.util.List;
 public interface IngredientService {
     Ingredient addIngredient(Ingredient ingredient);
     List<Ingredient> addIngredients(List<Ingredient> ingredients);
+    List<Ingredient> getIngredientsByRecipeId(Long recipeId);
 }

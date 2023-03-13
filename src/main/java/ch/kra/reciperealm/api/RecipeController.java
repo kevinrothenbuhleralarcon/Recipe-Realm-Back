@@ -31,6 +31,7 @@ public class RecipeController {
 
     @PostMapping()
     public ResponseEntity<RecipeFullDto> addRecipe(@RequestBody @Valid final RecipeFullDto recipeFullDto) {
-        return new ResponseEntity<>(recipeService.addRecipe(recipeFullDto), HttpStatus.CREATED);
+//        return new ResponseEntity<>(recipeService.addRecipe(recipeFullDto), HttpStatus.CREATED);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }

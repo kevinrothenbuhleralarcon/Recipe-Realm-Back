@@ -1,5 +1,6 @@
 package ch.kra.reciperealm.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -23,4 +24,7 @@ public class Recipe {
     @NonNull
     @NotBlank(message = CANNOT_BE_EMPTY)
     private String name;
+
+    @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    List<Ingredient> ingredients;
 }

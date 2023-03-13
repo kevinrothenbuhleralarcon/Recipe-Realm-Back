@@ -1,6 +1,7 @@
 package ch.kra.reciperealm.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -31,15 +32,15 @@ public class Ingredient {
     private long id;
 
     @NonNull
-    @NotBlank(message = CANNOT_BE_EMPTY)
+    @Column(nullable = false)
     private String ingredient;
 
     @NonNull
-    @NotNull(message = CANNOT_BE_EMPTY)
+    @Column(nullable = false)
     private double quantity;
 
     @NonNull
-    @NotBlank(message = CANNOT_BE_EMPTY)
+    @Column(nullable = false)
     private String uom;
 
 

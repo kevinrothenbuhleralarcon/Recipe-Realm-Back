@@ -22,8 +22,12 @@ public class Recipe {
     private long id;
 
     @NonNull
-    @NotBlank(message = CANNOT_BE_EMPTY)
+    @Column(nullable = false)
     private String name;
+
+    @NonNull
+    @Column(name = "number_of_people", nullable = false)
+    private long numberOfPeople;
 
     @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     List<Ingredient> ingredients;

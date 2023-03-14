@@ -14,16 +14,21 @@ import static ch.kra.reciperealm.Strings.CANNOT_BE_EMPTY;
 
 @Getter
 @Setter
+@NoArgsConstructor
+@RequiredArgsConstructor
 public class IngredientDto {
 
     private Long id;
 
+    @NonNull
     @NotBlank(message = CANNOT_BE_EMPTY)
     private String ingredient;
 
+    @NonNull
     @NotNull(message = CANNOT_BE_EMPTY)
     private Double quantity;
 
+    @NonNull
     @NotBlank(message = CANNOT_BE_EMPTY)
     private String uom;
 

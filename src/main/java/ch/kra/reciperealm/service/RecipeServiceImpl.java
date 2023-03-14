@@ -1,9 +1,8 @@
 package ch.kra.reciperealm.service;
 
-import ch.kra.reciperealm.dto.RecipeFullDto;
 import ch.kra.reciperealm.dto.RecipeDto;
+import ch.kra.reciperealm.dto.RecipeFullDto;
 import ch.kra.reciperealm.exception.EntityNotFoundException;
-import ch.kra.reciperealm.model.Ingredient;
 import ch.kra.reciperealm.model.Recipe;
 import ch.kra.reciperealm.repository.RecipeRepository;
 import lombok.AllArgsConstructor;
@@ -18,7 +17,6 @@ import java.util.stream.Collectors;
 public class RecipeServiceImpl implements RecipeService {
 
     private final RecipeRepository recipeRepository;
-    private final IngredientService ingredientService;
     private final ModelMapper modelMapper;
 
     @Override
@@ -33,7 +31,6 @@ public class RecipeServiceImpl implements RecipeService {
     public RecipeFullDto getRecipe(final Long id) {
         Recipe recipe = recipeRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException(id, Recipe.class));
-
 
         return modelMapper.map(recipe, RecipeFullDto.class);
     }

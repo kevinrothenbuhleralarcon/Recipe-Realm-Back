@@ -1,6 +1,7 @@
 package ch.kra.reciperealm.helper;
 
 import ch.kra.reciperealm.dto.IngredientDto;
+import ch.kra.reciperealm.dto.RecipeDto;
 import ch.kra.reciperealm.dto.RecipeFullDto;
 import ch.kra.reciperealm.model.Ingredient;
 import ch.kra.reciperealm.model.Recipe;
